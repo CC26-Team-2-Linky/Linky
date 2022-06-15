@@ -21,8 +21,6 @@ To view the project, please clone our repository.
 
 After cloning the repository, please run npm install in the root directory, and in the cc26-linky directory.
 
-# Usage
-
 # Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
