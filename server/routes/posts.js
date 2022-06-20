@@ -20,10 +20,6 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get("/", (req, res) => {
-  res.status(200).send("What do you want?");
-});
-
 router.get("/api", async (req, res) => {
   const results = await knex.select("*").from("posts");
   res.status(200).send(JSON.stringify(results));
