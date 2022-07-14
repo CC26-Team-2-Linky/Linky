@@ -40,8 +40,8 @@
 }
 
 .searchButton:hover {
-  color: rgb(208, 155, 246);
-  background-color: #eee8f5;
+  color: white;
+  background-color: #e7d2ff;
 }
 
 @media only screen and (max-width: 640px) {
