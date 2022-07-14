@@ -1,18 +1,19 @@
 import React, { useRef } from "react";
-
+import "../Input.css";
 export default function Input({ postData }) {
   const linkRef = useRef(null);
   const descriptionRef = useRef(null);
   const tagsRef = useRef(null);
 
-  let result;
   const pushedButton = () => {
-    const tagArray = [];
-    result = {
+    let result = {
       link: linkRef.current.value,
       description: descriptionRef.current.value,
       tags: tagsRef.current.value,
     };
+    linkRef.current.value = "";
+    descriptionRef.current.value = "";
+    tagsRef.current.value = "";
     return result;
   };
 
@@ -41,7 +42,7 @@ export default function Input({ postData }) {
           type="text"
           className="input-box"
           ref={descriptionRef}
-          placeholder="Please input your comment for the URL"
+          placeholder="Please write a description"
         />
       </div>
       <div className="inputTag-box">
@@ -51,7 +52,7 @@ export default function Input({ postData }) {
           className="input-box"
           type="text"
           ref={tagsRef}
-          placeholder="separate with , for multiple tags"
+          placeholder='separate with "," and no space'
         />
       </div>
       <button className="inputButton" onClick={uploadedData}>

@@ -4,8 +4,6 @@ const PORT = process.env.PORT || 9000;
 const router = require("./routes");
 const cors = require("cors");
 const app = express();
-const config = require("../knexfile");
-const knex = require("knex")(config);
 
 app.use(express.static(path.join(__dirname, "../cc26-linky/build")));
 
@@ -15,5 +13,4 @@ app.use(cors());
 
 app.listen(PORT, () => {
   console.log(`Server is ready and listening on port ${PORT}`);
-  //
 });
