@@ -13,13 +13,18 @@ Linky is a project built to help people overwhelmed with the resources around th
 - [React](https://reactjs.org/)
 - [Heroku](https://id.heroku.com/)
 
-# Getting Started
+# Getting Started & Installation
 
-To view the project, please clone our repository.
-
-- Installation
-
-After cloning the repository, please run npm install in the root directory, and in the cc26-linky directory.
+- Clone our repository. 
+- Run ``` npm install ``` in the root directory, and in the cc26-linky directory.
+- Create a .env file with your Postgres credentials.
+```
+DB_PASSWORD= your pg password
+DB_NAME=linky
+DATABASE_URL=postgres://postgres:yourpgpassword@localhost:5432
+```
+- Start the server by running ```npm start``` in the root directory. To start the frontend, run ``` npm start ``` in the cc26-linky directory.
+- Go to ```localhost:3000``` to view the frontend.
 
 # Contributing
 
