@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import InputModal from "./InputModal";
+import "../InputModal.css";
 
 export default function ModalButton({ postData }) {
   const [openModal, setOpenModal] = useState(false);
@@ -7,11 +8,12 @@ export default function ModalButton({ postData }) {
   return (
     <>
       <button
+        className="modalButton"
         onClick={() => {
           setOpenModal(true);
         }}
       >
-        open modal
+        Add a new recommendation!
       </button>
       {openModal && (
         <InputModal

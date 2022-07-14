@@ -53,3 +53,19 @@
   border: solid rgb(197, 197, 230);
   border-radius: 15px;
 }
+
+.modalButton {
+  border-radius: 18px;
+  padding: 8px;
+  margin-top: 20px;
+  border-color: #afc5ff;
+  background-color: #7e9cec;
+  border-width: medium;
+}
+
+.modalButton:hover {
+  transition: linear;
+  transition-duration: 500ms;
+  background-color: #afc5ff;
+  border-color: #e8eaf1;
+}
