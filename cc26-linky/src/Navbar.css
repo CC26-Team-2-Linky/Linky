@@ -5,6 +5,7 @@
   background-color: #ba9bd8;
   align-items: center;
   padding-right: 40px;
+  z-index: 1;
 }
 
 .nav .logo img {
