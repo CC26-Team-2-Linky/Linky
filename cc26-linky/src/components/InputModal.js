@@ -29,6 +29,7 @@ export default function InputModal({ postData, openModal, setOpenModal }) {
   return ReactDOM.createPortal(
     <div className="modalBg">
       <div className="modalContainer">
+        {" "}
         <p className="inputMessage">Post your recommendation!</p>
         <div className="inputLink-box">
           {" "}
@@ -37,7 +38,7 @@ export default function InputModal({ postData, openModal, setOpenModal }) {
             type="text"
             className="input-box"
             ref={linkRef}
-            placeholder="Please input your URL"
+            placeholder="Add link"
           />
         </div>
         <div className="inputDesc-box">
@@ -47,7 +48,7 @@ export default function InputModal({ postData, openModal, setOpenModal }) {
             type="text"
             className="input-box"
             ref={descriptionRef}
-            placeholder="Please write a description"
+            placeholder="Write a description"
           />
         </div>
         <div className="inputTag-box">
@@ -57,12 +58,22 @@ export default function InputModal({ postData, openModal, setOpenModal }) {
             className="input-box"
             type="text"
             ref={tagsRef}
-            placeholder='separate with "," and no space'
+            placeholder='separate with "," '
           />
         </div>
-        <button className="inputButton" onClick={uploadedData}>
-          Post!
-        </button>
+        <div className="buttons">
+          <button className="inputButton post" onClick={uploadedData}>
+            Post!
+          </button>
+          <button
+            className="inputButton cancel"
+            onClick={() => {
+              setOpenModal(false);
+            }}
+          >
+            Cancel
+          </button>
+        </div>
       </div>
     </div>,
     document.getElementById("portal")
