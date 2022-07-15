@@ -6,7 +6,7 @@ export default function ModalButton({ postData }) {
   const [openModal, setOpenModal] = useState(false);
 
   return (
-    <>
+    <div className="modalButtonContainer">
       <button
         className="modalButton"
         onClick={() => {
@@ -22,6 +22,6 @@ export default function ModalButton({ postData }) {
           postData={postData}
         />
       )}
-    </>
+    </div>
   );
 }
