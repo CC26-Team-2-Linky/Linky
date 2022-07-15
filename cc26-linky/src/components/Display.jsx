@@ -1,8 +1,8 @@
 import React from "react";
 import "../Display.css";
 
-export default function Display({ content }) {
-  if (content !== null) {
+export default function Display({ content, page, fetchdata }) {
+  if (content.length > 0) {
     return (
       <div className="display-container">
         <p className="displayMessage">Find your favorites</p>
@@ -15,6 +15,11 @@ export default function Display({ content }) {
             </div>
           );
         })}
+        <div className="page-container">
+          <button className="loadBtn" onClick={fetchdata}>
+            Load more posts
+          </button>
+        </div>
       </div>
     );
   } else {

@@ -9,14 +9,17 @@ import { useEffect, useState } from "react";
 const server = "http://localhost:9000";
 
 export default function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
 
   const fetchdata = async () => {
-    const response = await axios.get(`${server}/api`);
+    const response = await axios.get(`${server}/posts/${page}`);
     const info = response.data;
-    console.log(info);
-    setData(info);
+    if (info.length === 0) {
+      return;
+    }
+    setData(data.concat(info));
+    setPage(page + 1);
   };
 
   const postData = async (data) => {
@@ -32,7 +35,7 @@ export default function App() {
     <div className="App">
       <Navbar setData={setData} />
       <Input postData={postData} />
-      <Display content={data} />
+      <Display content={data} page={page} fetchdata={fetchdata} />
     </div>
   );
 }

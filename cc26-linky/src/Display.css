@@ -5,9 +5,7 @@
   border-color: slateblue;
   width: 95%;
   height: 50%;
-  margin-left: 15px;
-  margin-top: 15px;
-  margin-bottom: 25px;
+  margin: 15px auto 15px auto;
   overflow: auto;
 }
 
@@ -32,4 +30,14 @@
 .item-desc {
   font-weight: bold;
   font-size: 1.1em;
+}
+
+.loadBtn {
+  display: block;
+  margin: 1% auto 0 auto;
+  padding: 10px 50px;
+  border-radius: 8px;
+  border: solid rgb(197, 197, 230);
+  background-color: #afc5ff;
+  font-size: 20px;
 }
