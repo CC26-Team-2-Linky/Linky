@@ -13,6 +13,7 @@ export default function App() {
     const response = await axios.get("https://cc26-linky.herokuapp.com/api");
     const info = response.data;
     setData(info);
+    console.log(data);
   };
 
   const postData = async (data) => {
