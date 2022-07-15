@@ -1,4 +1,4 @@
-![linky image](/assets/screenshot.png)
+![image](https://user-images.githubusercontent.com/84162315/179136898-57f9aa02-c0ba-4b80-b8f9-7e895da7bdee.png)
 
 # About Linky
 

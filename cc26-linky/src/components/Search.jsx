@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useRef } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
 
-export default function Search({ setData }) {
+export default function Search({ setData, setbBtnText }) {
   const searchRef = useRef(null);
 
   const requestTag = async () => {
@@ -11,6 +11,7 @@ export default function Search({ setData }) {
     const results = await axios.get(
       `https://cc26-linky.herokuapp.com/tags/${tag}`
     );
+    setbBtnText(0);
     setData(results.data);
   };
 
