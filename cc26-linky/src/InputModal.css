@@ -64,6 +64,7 @@
   border-color: #afc5ff;
   background-color: #7e9cec;
   border-width: medium;
+  font-weight: 500;
 }
 
 .modalButton:hover {
@@ -71,6 +72,7 @@
   transition-duration: 500ms;
   background-color: #afc5ff;
   border-color: #e8eaf1;
+  color: white;
 }
 
 .buttons {
