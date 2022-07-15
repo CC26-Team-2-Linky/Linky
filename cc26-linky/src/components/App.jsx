@@ -6,18 +6,24 @@ import "../App.css";
 import { useEffect, useState } from "react";
 import ModalButton from "./ModalButton";
 
+const server = "http://localhost:9000";
+
 export default function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
+  const [page, setPage] = useState(1);
 
   const fetchdata = async () => {
-    const response = await axios.get("https://cc26-linky.herokuapp.com/api");
+    const response = await axios.get(`${server}/posts/${page}`);
     const info = response.data;
-    setData(info);
-    console.log(data);
+    if (info.length === 0) {
+      return;
+    }
+    setData(data.concat(info));
+    setPage(page + 1);
   };
 
   const postData = async (data) => {
-    await axios.post("https://cc26-linky.herokuapp.com/newpost", data);
+    await axios.post(`${server}/newpost`, data);
     fetchdata();
   };
 
@@ -29,7 +35,7 @@ export default function App() {
     <div className="App">
       <Navbar setData={setData} />
       <ModalButton postData={postData} />
-      <Display content={data} />
+      <Display content={data} page={page} fetchdata={fetchdata} />
     </div>
   );
 }

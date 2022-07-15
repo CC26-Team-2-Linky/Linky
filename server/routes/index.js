@@ -26,7 +26,16 @@ router.get("/", (req, res) => {
 
 router.get("/api", async (req, res) => {
   const results = await knex.select("*").from("posts");
-  res.status(200).send(JSON.stringify(results));
+  console.log(results);
+  res.status(200).send(results);
+});
+
+router.get("/posts/:page", async (req, res) => {
+  const page = req.params.page;
+  console.log(`============Page is ${page}===================`);
+  const dbData = await knex.select("*").from("posts");
+  const sortArr = dbData.sort((a, b) => a["posted-at"] - b["posted-at"]);
+  res.status(200).send(sortArr.slice(page * 2 - 2, page * 2));
 });
 
 router.get("/tags/:input", async (req, res) => {

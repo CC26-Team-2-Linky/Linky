@@ -2,8 +2,8 @@ import React from "react";
 import "../Display.css";
 import { BsLink45Deg } from "react-icons/bs";
 
-export default function Display({ content }) {
-  if (content !== null) {
+export default function Display({ content, page, fetchdata }) {
+  if (content.length > 0) {
     return (
       <div className="display-container">
         <div>
@@ -26,6 +26,9 @@ export default function Display({ content }) {
                     <div>#{tag}</div>
                   ))}
                 </div>
+                  <button className="loadBtn" onClick={fetchdata}>
+                    Load more posts
+                  </button>
               </div>
             );
           })}
