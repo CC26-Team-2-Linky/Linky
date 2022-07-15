@@ -36,11 +36,15 @@ router.get("/posts/:page", async (req, res) => {
   const dbData = await knex.select("*").from("posts");
 <<<<<<< HEAD
   const sortArr = dbData.sort((a, b) => a["posted-at"] - b["posted-at"]);
+<<<<<<< HEAD
   res.status(200).send(sortArr.slice(page * 2 - 2, page * 2));
 =======
   const sortArr = dbData.sort((a, b) => b["posted-at"] - a["posted-at"]);
   res.status(200).send(sortArr.slice(page * 10 - 10, page * 10));
 >>>>>>> a12aea35411e01ebd4888fd61c107866adf7588e
+=======
+  res.status(200).send(sortArr.slice(page * 10 - 10, page * 10));
+>>>>>>> cfdfeb5 (Fix: Updated variables for deployment)
 });
 
 router.get("/tags/:input", async (req, res) => {
