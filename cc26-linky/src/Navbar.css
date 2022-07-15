@@ -20,7 +20,7 @@
 }
 .searchInput {
   border-radius: 10px;
-  padding: 6px 14px;
+  padding: 0;
   text-align: center;
   margin-right: 4px;
   border-color: #efefef;
@@ -34,11 +34,17 @@
   border-color: #efefef;
   border: 4px;
   font-weight: 600;
+  border-color: #afc5ff;
+  background-color: #7e9cec;
+  border-width: medium;
 }
 
 .searchButton:hover {
   color: white;
-  background-color: #e7d2ff;
+  transition: linear;
+  transition-duration: 100ms;
+  background-color: #afc5ff;
+  border-color: #e8eaf1;
 }
 
 @media only screen and (max-width: 640px) {
