@@ -2,8 +2,23 @@ import React from "react";
 import "../Display.css";
 import { BsLink45Deg } from "react-icons/bs";
 
-export default function Display({ content }) {
-  if (content !== null) {
+export default function Display({
+  content,
+  setPage,
+  fetchdata,
+  setData,
+  btnText,
+  setbBtnText,
+}) {
+  const resetDisplay = () => {
+    setPage(1);
+    setData([]);
+    console.log(content);
+    setbBtnText("Load more posts");
+    fetchdata();
+  };
+
+  if (content.length > 0) {
     return (
       <div className="display-container">
         <div>
@@ -30,9 +45,21 @@ export default function Display({ content }) {
             );
           })}
         </div>
+        {btnText ? (
+          <button className="loadBtn" onClick={fetchdata}>
+            {btnText}
+          </button>
+        ) : (
+          <button className="loadBtn" onClick={resetDisplay}>
+            See latest posts
+          </button>
+        )}
       </div>
     );
   } else {
+    {
+      fetchdata();
+    }
     return <div> Loading....</div>;
   }
 }

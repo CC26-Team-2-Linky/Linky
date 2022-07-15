@@ -9,15 +9,22 @@ import ModalButton from "./ModalButton";
 const server = "http://localhost:9000";
 
 export default function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
+  const [btnText, setbBtnText] = useState("Load more posts");
 
   const fetchdata = async () => {
-    const response = await axios.get(`${server}/api`);
+    const response = await axios.get(`${server}/posts/${page}`);
     const info = response.data;
-    console.log(info);
-    setData(info);
-    console.log(data);
+    if (info.length === 0) {
+      setbBtnText("All posts loaded");
+      return;
+    }
+    if (info.length > 0) {
+      setbBtnText("Load more posts");
+    }
+    setData(data.concat(info));
+    setPage(page + 1);
   };
 
   const postData = async (data) => {
@@ -31,9 +38,17 @@ export default function App() {
 
   return (
     <div className="App">
-      <Navbar setData={setData} />
+      <Navbar setData={setData} setbBtnText={setbBtnText} />
       <ModalButton postData={postData} />
-      <Display content={data} />
+      <Display
+        content={data}
+        setData={setData}
+        page={page}
+        setPage={setPage}
+        fetchdata={fetchdata}
+        btnText={btnText}
+        setbBtnText={setbBtnText}
+      />
     </div>
   );
 }

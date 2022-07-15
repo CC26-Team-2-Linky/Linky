@@ -71,3 +71,13 @@ a {
   flex-wrap: wrap;
   margin: 10px;
 }
+
+.loadBtn {
+  display: block;
+  margin: 1% auto 0 auto;
+  padding: 10px 50px;
+  border-radius: 8px;
+  border: solid rgb(197, 197, 230);
+  background-color: #afc5ff;
+  font-size: 20px;
+}
