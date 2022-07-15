@@ -1,9 +1,8 @@
-import React from "react";
 import Navbar from "./Navbar";
 import Display from "./Display";
 import axios from "axios";
 import "../App.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ModalButton from "./ModalButton";
 
 const server = "https://cc26-linky.herokuapp.com";
