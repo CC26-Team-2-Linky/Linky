@@ -6,7 +6,7 @@ import "../App.css";
 import { useEffect, useState } from "react";
 import ModalButton from "./ModalButton";
 
-const server = "http://localhost:9000";
+const server = "https://cc26-linky.herokuapp.com";
 
 export default function App() {
   const [data, setData] = useState([]);
