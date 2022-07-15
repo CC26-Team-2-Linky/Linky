@@ -34,7 +34,7 @@ router.get("/posts/:page", async (req, res) => {
   const page = req.params.page;
   const dbData = await knex.select("*").from("posts");
   const sortArr = dbData.sort((a, b) => b["posted-at"] - a["posted-at"]);
-  res.status(200).send(sortArr.slice(page * 10 - 10, page * 10));
+  res.status(200).send(sortArr.slice(page * 8 - 8, page * 8));
 });
 
 router.get("/tags/:input", async (req, res) => {
