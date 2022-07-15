@@ -67,6 +67,16 @@
   font-weight: 500;
 }
 
+.modalButtonContainer {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  margin-left: 20%;
+  margin-right: 20%;
+  border-bottom: solid;
+  border-width: 2px;
+  border-color: rgb(105, 100, 104);
+}
+
 .modalButton:hover {
   transition: linear;
   transition-duration: 500ms;
