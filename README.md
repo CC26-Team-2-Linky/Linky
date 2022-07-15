@@ -42,6 +42,13 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 Distributed under the MIT License. See LICENSE.txt for more information.
 
+#Future features
+- Login
+- Ability to save links to your account
+- Edit your own post
+- Delete your own post
+- Multiple Links
+
 # Contacts
 
 - [Yushiko Salvador](https://www.linkedin.com/in/yushiko-cloe-salvador-518431211/)
