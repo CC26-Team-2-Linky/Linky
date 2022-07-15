@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Display from "./Display";
-import Input from "./Input";
 import axios from "axios";
 import "../App.css";
 import { useEffect, useState } from "react";
+import ModalButton from "./ModalButton";
 
 const server = "http://localhost:9000";
 
@@ -34,7 +34,7 @@ export default function App() {
   return (
     <div className="App">
       <Navbar setData={setData} />
-      <Input postData={postData} />
+      <ModalButton postData={postData} />
       <Display content={data} page={page} fetchdata={fetchdata} />
     </div>
   );

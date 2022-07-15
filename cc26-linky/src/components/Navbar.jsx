@@ -7,7 +7,7 @@ export default function Navbar({ setData }) {
   return (
     <div className="nav">
       <div className="logo">
-        <img src={linkylogoonobg} alt="LINKY" />
+        <img src={linkylogoonobg} alt="LINKY LOGO" />
       </div>
 
       <Search setData={setData} />

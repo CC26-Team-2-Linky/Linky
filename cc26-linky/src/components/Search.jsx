@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useRef } from "react";
+import { BiSearchAlt2 } from "react-icons/bi";
 
 export default function Search({ setData }) {
   const searchRef = useRef(null);
@@ -15,15 +16,15 @@ export default function Search({ setData }) {
 
   return (
     <div className="search">
-      <label>Tag Search</label>
       <input
         type="text"
-        className="searchGo"
+        className="searchInput"
         ref={searchRef}
-        placeholder="Put your interests!"
+        placeholder="Enter a tag"
       />
-      <button className="searchB" onClick={requestTag}>
-        Go!
+      <button className="searchButton" onClick={requestTag}>
+        <BiSearchAlt2 />
+        Search
       </button>
     </div>
   );
